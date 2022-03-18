@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <title>AirCorp</title>
+</head>
+<body>
+    <header>
+        <h1>Welcome {{display_get_oneUser.fullName()}}</h1>
+        <nav>
+            {% block menu %} {% include 'menu.html' %} {% endblock menu %}
+        </nav>
+    </header>
+    
+    
+    <!-- I don't see any buttons here for book flight... are we still getting to that?  -->
+    <!-- also, where is the logout button for this page? -->
+    <!-- is is a good habit to just have below on every page in a web app like this?  instructor answer: YES!!!!!!!!!!!-->
+    <div class="messages">
+        {% with messages = get_flashed_messages() %}
+            {%if messages %}
+                {% for m in messages %}
+                    <h5>{{m}}</h5>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+    </div>
+    <main>
+        <h1>would really like some help here making a jinja if prgm here: if no bookings, just say so, and no msg/tbl</h1>
+        <h2>{{display_get_oneUser.fullName()}} has the following booking(s)</h2>
+        <table>
+            <tr>
+                <th>Airline</th>
+                <th>Flight Number</th>
+                <th>Flight Date</th>
+                <th>Departure Airport</th>
+                <th>Arrival Airport</th>
+                <th>Actions</th>
+            </tr>
+            {% for rec in display_get_booking %}
+                <tr>
+                    <td>{{rec.airline.airlineName}}</td>
+                    <td>{{rec.flight.flightNumber}}</td>
+                    <td>{{rec.booking.flightDate}}</td>
+                    <td>{{rec.flight.departureAirport}}</td>
+                    <td>{{rec.flight.arrivalAirport}}</td>
+                    <td>yo, we need some actions here</td>
+                </tr>
+            {% endfor %}
+        </table>
+    </main>
+    <footer>
+
+    </footer>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/scripts.js')}}"></script>
+</body>
+</html>

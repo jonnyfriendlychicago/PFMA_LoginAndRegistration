@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <h1> Add an inFlight Airline</h1>
+        <nav>
+            {% block menu %} {% include 'menu.html' %} {% endblock menu %}
+        </nav>
+    </header>
+    <main>
+        <form action="/airlines/create/" method="post" > 
+            <section>
+                <label for="airlineName"> Airline name: </label>
+                <input type="text" name="airlineName">
+            </section>
+            <section>
+                <label for="hqCity">Corporate headquaters location: </label>
+                <input type="text" name="hqCity">
+            </section>
+            <section>
+                <label for="locationCount"> Number of Locations: </label>
+                <input type="number" name="locationCount">
+            </section>
+            <section>
+                <label for="workerCount"> Number of workers: </label>
+                <input type="number" name="workerCount">
+            </section>
+            <section>
+                <label for="planeCount"> Number of planes: </label>
+                <input type="number" name="planeCount">
+            </section>
+            <button> Add Airline</button>
+        </form>
+    </main>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <title>AirCorp</title>
+</head>
+<body>
+    <header>
+        <h1>inFlight Employees & Customers</h1>
+        <nav>
+            {% block menu %} {% include 'menu.html' %} {% endblock menu %}
+        </nav>
+    </header>
+    <main>
+        <h2>AirCorp Employees</h2>
+        <h2>Welcome {{display_get_oneUser.fullName()}} to the User Interface (what?) </h2>
+        <table>
+            <tr>
+                <th>Employee Name</th>
+                <th>Email</th>
+            </tr>
+            {% for auser in allUsers %}
+                {% if auser.access == 9 %}
+                    <tr>
+                        <td>{{auser.fullName()}}</td>
+                        <td>{{auser.email}}</td>
+                    </tr>
+                {% endif %}
+            {% endfor %}
+        </table>
+        <h2>AirCorp Users</h2>
+        <table>
+            <tr>
+                <th>Employee Name</th>
+                <th>Email</th>
+                <th>Update to Employee</th>
+            </tr>
+            {% for auser in allUsers %}
+                    <tr>
+                        <td>{{auser.fullName()}}</td>
+                        <td>{{auser.email}}</td>
+                        <td>
+                            {% if auser.access == 0 %}
+                                <a href="/users/{{auser.id}}/createEmployee/">Make Employee</a>
+                            {% else %}
+                                Employee
+                            {% endif %}
+                        </td>
+                    </tr>
+            {% endfor %}
+        </table>
+    </main>
+    <footer>
+
+    </footer>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/scripts.js')}}"></script>
+</body>
+</html>

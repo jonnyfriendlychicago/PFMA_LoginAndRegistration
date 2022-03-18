@@ -1,0 +1,96 @@
+.errorMessage {
+    background-color: rgb(224, 112, 112);
+    padding: 10px; 
+}
+.royalBlueFont {
+    color: blue; 
+}
+
+.stoplightGreenFont {
+    color: green; 
+}
+.container01 {
+    background-color: lightgray;
+    margin: 10px; 
+    /* border-radius: 25%; */
+    padding: 10px; 
+}
+.flexrow {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.flexcolumn {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+table,
+td,
+tr,
+th {
+    border: 1px double #cc13cc;
+    padding: 1em;
+}
+table {
+    margin: 2em;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 95%;
+}
+body header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 85%;
+    margin: 1em;
+}
+body header nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 95%;
+}
+body header nav a {
+    text-decoration: none;
+    color: #000;
+    padding: 1em;
+    border: 3px groove #11c49d;
+    border-radius: 50%;
+}
+body main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 85%;
+    margin: 1em;
+    border: 1px solid red; 
+}
+body main .row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 95%;
+    align-items: flex-start;
+}
+body main .row .column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 95%;
+}
+body main .row .flights {
+    align-items: flex-start;
+}

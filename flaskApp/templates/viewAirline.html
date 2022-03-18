@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{display_airline.name}}</title>
+</head>
+<body>
+    <header>
+        <h1> AirCorp Airlines {{display_airline.name}}</h1>
+        <nav>
+            {% block menu %} {% include 'menu.html' %} {% endblock menu %}
+        </nav>
+    </header>
+    <main>
+        <h2>Headq: {{display_airline.headquarters}}</h2>
+        <h2>Loc#: {{display_airline.locations}}</h2>
+        <h2>WorkersCount#: {{display_airline.workers}}</h2>
+        <h2>planesCount#: {{display_airline.planesCount}}</h2>
+
+
+    </main>
+</body>
+</html>

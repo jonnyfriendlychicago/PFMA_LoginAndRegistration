@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <title>All the Songs</title>
+</head>
+<body>
+    <header>
+        <h1>Welcome to All the Songs.   Please sign in.</h1>
+        <nav>
+            
+        </nav>
+    </header>
+    
+    <main>
+        <div>
+            {% with messages = get_flashed_messages() %}
+                {%if messages %}
+                    {% for m in messages %}
+                    <div class="errorMessage">
+                    {{m}}
+                    </div>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+        </div>
+        <div class="row">
+            <div class="container01"> 
+                <h2 class="royalBlueFont" >Register</h2>
+                
+                <form action="/register/" method='post'>
+                    <section>
+                        <label for="firstName">First Name: </label>
+                        <input type="text" name="firstName">
+                    </section>
+                    <section>
+                        <label for="lastName">Last Name: </label>
+                        <input type="text" name='lastName'>
+                    </section>
+                    <section>
+                        <label for="email">Email: </label>
+                        <input type="email" name="email">
+                    </section>
+                    <section>
+                        <label for="password">Password: </label>
+                        <input type="password" name="password">
+                    </section>
+                    <section>
+                        <label for="confirm">Confirm Password: </label>
+                        <input type="password" name="confirm">
+                    </section>
+                    <button>Register + Login</button>
+                </form>
+            </div>
+            <div class="container01">
+                <h2 class="stoplightGreenFont" >Login</h2>
+                <form action="/login/" method='post'>
+                    <section>
+                        <label for="email">Email: </label>
+                        <input type="text" name='email'>
+                    </section>
+                    <section>
+                        <label for="password">Password: </label>
+                        <input type="password" name='password'>
+                    </section>
+                    <button>Login</button>
+                </form>
+            </div>
+        </div>
+    </main>
+    <footer>
+
+    </footer>
+    <!-- <script type="text/javascript" src="{{ url_for('static', filename='js/scripts.js')}}"></script> -->
+</body>
+</html>
